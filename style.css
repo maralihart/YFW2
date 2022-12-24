@@ -1,0 +1,17 @@
+style {
+  width: 70%;
+  display: block;
+  border: 1px solid black;
+  white-space: pre;
+  margin: 15px;
+}
+
+* {
+  transition: all 0.5s;
+}
+
+.stylebox {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}

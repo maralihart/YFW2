@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>CSS Learning Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>CSS Learning Project</h1>
+  <p>After you've worked through this worksheet, <a href="./example.html">let's practice</a></p>
+
+  <!-- Exercise 1: Selectors -->
+  <section>
+    <h2>Exercise 1: Selectors</h2>
+    <p>In this exercise, you will practice using different types of selectors to style elements on a web page.</p>
+    <ol>
+      <li>
+        <p class="first">Use a type selector to make all the paragraphs on the page blue.</p>
+        <style contenteditable>
+          p {}
+        </style>
+      </li>
+      <li>
+        <p class="second">Use a class selector to make the first paragraph red and the second paragraph green.</p>
+        <style contenteditable>
+          .first {}
+
+          .second {}
+        </style>
+      </li>
+      <li>
+        <p id="first-third">Use an ID selector to make the third paragraph orange.</p>
+        <style contenteditable>
+          #first-third {}
+        </style>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Exercise 2: Properties -->
+  <section>
+    <h2>Exercise 2: Properties</h2>
+    <p>In this exercise, you will practice using different CSS properties to style elements on a web page.</p>
+    <ol>
+      <li>
+        <p class="first">Use the font-family property to set the font of all the headings to "Arial, sans-serif".</p>
+        <style contenteditable>
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {}
+        </style>
+      </li>
+      <li>
+        <p class="second">Use the font-size property to make all the paragraphs 18px and all the headings 36px.</p>
+        <style contenteditable>
+          p {}
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {}
+        </style>
+      </li>
+      <li>
+        <p class="third" id="link-change">Use the color property to make all the links pink and all the visited links
+          purple.</p>
+        <a href="##">Don't click this link</a>
+        <a href="#link-change">Click this link</a>
+        <style contenteditable>
+          a {}
+
+          a:visited {}
+        </style>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Exercise 3: Layout -->
+  <section>
+    <h2>Exercise 3: Layout</h2>
+    <p>In this exercise, you will practice using different CSS layout properties to control the position and size of
+      elements on a web page.</p>
+    <ol>
+      <li>
+        <p class="first">Use the display property to make the first paragraph a block element and the
+          second paragraph
+          an inline
+          element.</p>
+        <p>Block elements are displayed one on top of another. <span class="block-paragraph">Like building
+            blocks.</span> This is by default.
+        </p>
+        <style contenteditable>
+          .block-paragraph {}
+
+          .inline-paragraph {}
+        </style>
+      </li>
+      <li>
+        <p class="second inline-paragraph">Use the width and height properties to make the second paragraph 200px wide
+          and 100px tall.
+        </p>
+        <p>Inline elements are displayed all in line with each other. <span class="inline-paragraph">Like a queue at the
+            store (when you're "in line"</span>
+        </p>
+        <style contenteditable>
+          .second {}
+        </style>
+      </li>
+      <li>
+        <p class="third">Use the margin and padding properties to add 20px of space around the third paragraph and 10px
+          of space
+          inside it.</p>
+        <style contenteditable>
+          .third {}
+        </style>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Exercise 4: Advanced Techniques -->
+  <section>
+    <h2>Exercise 4: Advanced Techniques</h2>
+    <p>In this exercise, you will practice using some more advanced CSS techniques, such as pseudo-classes and media
+      queries.</p>
+    <ol>
+      <li>
+        <p class="first">Use a pseudo-class to change the color of the first paragraph to red when the mouse is hovering
+          over it.</p>
+        <style contenteditable>
+          .first:hover {}
+        </style>
+      </li>
+      <li>
+        <p class="second">Use a media query to make the below center-aligned when the screen is narrower than
+          500px.</p>
+        <p id="center-me">Center me! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.</p>
+        <style contenteditable>
+          @media (max-width: 500px) {
+            #center-me {
+              text-align: center;
+            }
+          }
+        </style>
+      </li>
+    </ol>
+  </section>
+</body>
+
+</html>

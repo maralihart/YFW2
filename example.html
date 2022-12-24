@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>CSS Learning Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Practice Your CSS!</h1>
+  <p>Put all your CSS below!</p>
+  <div class="stylebox">
+    <textarea id="css-input"></textarea>
+    <button id="apply-button">Apply</button>
+  </div>
+
+  <p>After you've worked through this worksheet, <a href="./example.html">let's practice</a></p>
+
+  <script>
+    var applyButton = document.getElementById('apply-button');
+    applyButton.addEventListener('click', function () {
+      var cssInput = document.getElementById('css-input').value;
+      var styleElement = document.createElement('style');
+      styleElement.innerHTML = cssInput;
+      document.head.appendChild(styleElement);
+    });
+  </script>
+</body>
+
+</html>
