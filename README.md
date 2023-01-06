@@ -1,6 +1,4 @@
-# YFW2
-
-# Your First Website (Part 1)
+# Your First Website (Part 2)
 Click [here](https://www.canva.com/design/DAFVontD7cM/3kg4F4oQJIFNcnMIZfnk3w/view?website#4) to see the accompanying slides.
 
 Click [here](https://replit.com/@maralihart/YFW2) to see the Repl.
