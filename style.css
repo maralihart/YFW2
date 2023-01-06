@@ -15,3 +15,25 @@ style {
   flex-direction: column;
   width: 50%;
 }
+
+#flexbox-practice {
+  margin-top: 30px;
+}
+
+.flexbox-cell {
+  padding: 10px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.red {
+  background-color: indianred;
+}
+
+.yellow {
+  background-color: khaki;
+}
+
+.blue {
+  background-color: royalblue;
+}

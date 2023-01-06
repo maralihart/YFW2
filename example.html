@@ -14,7 +14,94 @@
     <button id="apply-button">Apply</button>
   </div>
 
-  <p>After you've worked through this worksheet, <a href="./example.html">let's practice</a></p>
+  <div id="time">10:00</div>
+  <button id="start-button">Start Timer</button>
+  <button id="reset-button">Reset Timer</button>
+
+  <h2>H2 Element</h2>
+  <p>Make all the H2 elements into your favorite color. You can either use hexcodes (more information found <a
+      href="https://www.w3schools.com/colors/colors_hexadecimal.asp" target="_blank">here</a>) or use another color name
+    (examples found <a href="https://www.w3schools.com/colors/colors_hex.asp" target="_blank">here</a>)</p>
+
+  <h2>Fonts</h2>
+  <p>There are <strong>five</strong> different font families. Read more <a
+      href="https://www.w3schools.com/css/css_font.asp" target="_blank">here</a>.</p>
+  <p class="list-title">Font Families</p>
+  <ul>
+    <li>Serif</li>
+    <li>Sans-serif</li>
+    <li>Monospace</li>
+    <li>Cursive</li>
+    <li>Fantasy</li>
+  </ul>
+  <p>Make the list titles (they have the class "list-title") bold (aka font weight of 700) and change all list items
+    to your favorite font family. By default, it's serif so make sure you choose something different.</p>
+
+  <h2>Body</h2>
+  <p>Did you know that you can change the style of <em>everything</em> you see on the screen? Everything on the screen
+    is inside the <code>body</code> element. Use that element to make the background into your favorite color (<a
+      href="https://www.w3schools.com/css/css_background.asp" target="_blank">hint</a>). </p>
+
+  <h2 id="pseudo-classes">Pseudo Classes</h2>
+  <p>Pseudo classes are a great way to add visual interaction to your website without having to learn JavaScript.</p>
+  <p>Make all h3 elements (the headers below) change size when you hover over them.</p>
+  <h3>Links</h3>
+  <a href="#pseudo-classes">This link brings you to the psuedo classes section</a>
+  <a href="#">This link goes nowhere</a>
+  <p>Click one of these links and use the <code>visited</code> pseudo class to show the difference between the link you
+    clicked and the
+    one you haven't.</p>
+  <h3>Input</h3>
+  <p>Use <code>focused</code> pseudoclass and see what happens when you click the input box below!</p>
+  <form>
+    <input placeholder="Click me!" type="text" />
+  </form>
+  <h3>Image</h3>
+  <p>Using the id "dog-pic" and the <code>active</code> pseudoclass, you can change this image below when it's clicked
+    on (you'll have to hold onto your mouse to see the effect). For a black and white effect, try:
+    <code>filter: grayscale(100%);</code>. You'll also probably want to change the size of this photo.
+  </p>
+  <img id="dog-pic"
+    src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+
+  <h2></h2>
+
+  <h2>Timer</h2>
+  <p>Decorate the timer (id is "time")! I recommend experimenting with the following properties: <code>border</code>,
+    <code>padding</code>, <code>margin</code>, <code>background</code>, <code>font-size</code>, and any others you find
+    time for!
+  </p>
+
+  <h2>Flexbox?</h2>
+  <p>Another great thing about CSS is that we can use it to format how we put things together on the page. While we
+    won't be rearranging a whole website right now, let's practice with Flexbox Froggy!</p>
+  <p>Click the image below for the game of your life!</p>
+  <a href="https://flexboxfroggy.com" target="_blank">
+    <img
+      src="https://images.pexels.com/photos/12514384/pexels-photo-12514384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      width="200px"></a>
+
+  <p>Use the below boxes to practice flexbox. The whole div has the id "flexbox-practice" and each cell has the class
+    "flexbox-cell" as well as the name of their background color "red", "blue", "yellow" respectively.</p>
+
+  <p>Here's a style box to make it even easier.</p>
+
+  <div class="stylebox">
+    <textarea id="css-input2"></textarea>
+    <button id="apply-button2">Apply</button>
+  </div>
+
+  <div id="flexbox-practice">
+    <div class="flexbox-cell red">1</div>
+    <div class="flexbox-cell blue">2</div>
+    <div class="flexbox-cell yellow">3</div>
+    <div class="flexbox-cell red">4</div>
+    <div class="flexbox-cell blue">5</div>
+    <div class="flexbox-cell yellow">6</div>
+    <div class="flexbox-cell red">7</div>
+    <div class="flexbox-cell blue">8</div>
+    <div class="flexbox-cell yellow">9</div>
+  </div>
 
   <script>
     var applyButton = document.getElementById('apply-button');
@@ -24,6 +111,54 @@
       styleElement.innerHTML = cssInput;
       document.head.appendChild(styleElement);
     });
+
+    var applyButton2 = document.getElementById('apply-button2');
+    applyButton2.addEventListener('click', function () {
+      var cssInput = document.getElementById('css-input2').value;
+      var styleElement = document.createElement('style');
+      styleElement.innerHTML = cssInput;
+      document.head.appendChild(styleElement);
+    });
+
+    var timer;
+    var minutes = 10;
+    var seconds = 0;
+
+    function startTimer() {
+      timer = setInterval(function () {
+        seconds--;
+        if (seconds < 0) {
+          seconds = 59;
+          minutes--;
+        }
+        if (minutes < 0) {
+          clearInterval(timer);
+          alert("Time's up!");
+          return;
+        }
+        updateTimer();
+      }, 1000);
+    }
+
+    function updateTimer() {
+      var time = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+      document.getElementById("time").innerHTML = time;
+      if (minutes == 0 && seconds == 0) {
+        document.getElementById("time").style.color = "red";
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      minutes = 10;
+      seconds = 0;
+      document.getElementById("time").innerHTML = "10:00";
+      document.getElementById("time").style.color = "black";
+    }
+
+    document.getElementById("start-button").addEventListener("click", startTimer);
+    document.getElementById("reset-button").addEventListener("click", resetTimer);
+
   </script>
 </body>
 
